@@ -29,8 +29,8 @@ function ProjectsClient() {
               if (!name.trim()) return
               setCreating(true)
               try {
-                await fetch(
-                  `${process.env.NEXT_PUBLIC_API_URL}/api/projects`,
+                const res = await fetch(
+                  `${process.env.NEXT_PUBLIC_API_URL}/api/projects/`,
                   {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -40,6 +40,10 @@ function ProjectsClient() {
                     }),
                   },
                 )
+                if (!res.ok) {
+                  console.error("Failed to create project", await res.text())
+                  return
+                }
                 setName("")
                 setDescription("")
                 // simple reload of page data
