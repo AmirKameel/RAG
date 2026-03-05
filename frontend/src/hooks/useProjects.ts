@@ -11,7 +11,7 @@ export function useProjects() {
       setLoading(true)
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/projects`,
+          `${process.env.NEXT_PUBLIC_API_URL}/api/projects/`,
         )
         if (!res.ok) return
         const data = (await res.json()) as Project[]
@@ -25,4 +25,3 @@ export function useProjects() {
 
   return { projects, loading }
 }
-
