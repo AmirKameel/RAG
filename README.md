@@ -219,9 +219,4 @@ Contributions and improvements are welcome:
 
 If you find this project useful, consider **starring the repository** on GitHub to help others discover it.
 
----
-
-## 📄 License
-
-Choose and add a license here (e.g., MIT, Apache‑2.0) based on how you want others to use this project.
 
